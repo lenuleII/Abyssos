@@ -25,7 +25,7 @@
     angleIncrease: 4
     angleDecay: 16
     minAngle: 24
-    maxAngle: 45
+    maxAngle: 48
     fireRate: 8
     selectedMode: FullAuto
     availableModes:
@@ -93,6 +93,8 @@
   description: A L6 SAW for use by cyborgs. Creates .30 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
   components:
     - type: Gun
+      angleIncrease: 4
+      angleDecay: 16
       minAngle: 4
       maxAngle: 25
       fireRate: 8

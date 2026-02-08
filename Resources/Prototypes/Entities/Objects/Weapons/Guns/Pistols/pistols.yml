@@ -116,6 +116,7 @@
   description: A cyborg-mounted weapon system based on the Viper pistol. Creates ammunition on the fly from an internal fabricator, which slowly self-charges.
   components:
   - type: Gun
+    angleIncrease: 0
     fireRate: 5
     selectedMode: SemiAuto
     availableModes:
@@ -162,7 +163,7 @@
     boltClosed: null
   - type: Gun
     minAngle: 2
-    maxAngle: 17
+    maxAngle: 8
     fireRate: 4
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
@@ -239,14 +240,9 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
-  - type: Wieldable
-    unwieldOnUse: false
-  - type: GunWieldBonus
-    minAngle: -7
-    maxAngle: -8
   - type: Gun
-    minAngle: 9
-    maxAngle: 30
+    minAngle: 2
+    maxAngle: 19
     fireRate: 4
     availableModes:
     - SemiAuto
