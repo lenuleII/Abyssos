@@ -76,6 +76,8 @@ soil-construction-graph-any-mushroom = any mushroom
 construction-graph-tag-mop-basic = mop
 construction-graph-tag-cardboardbox = a cardboard box
 construction-graph-tag-synthesizer = synthesizer
+construction-graph-tag-paper = office paper
+construction-graph-tag-core-pinpointer-piece = piece of core pinpointer
 
 # toys
 construction-graph-tag-rubber-ducky = a rubber ducky
@@ -155,3 +157,6 @@ construction-graph-tag-spationaut-hardsuit = spationaut hardsuit
 
 # clothing
 construction-graph-tag-backpack = backpack
+
+# chemistry
+construction-graph-tag-centrifuge-compatible = centrifugable container
