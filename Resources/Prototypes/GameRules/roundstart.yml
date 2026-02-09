@@ -553,6 +553,7 @@
   - type: GameRule
     minPlayers: 20
   - type: BloodCultRule
+    possibleVeilBeaconPrefix: DefaultStationBeacon
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
