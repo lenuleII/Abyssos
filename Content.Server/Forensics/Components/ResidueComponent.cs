@@ -8,7 +8,7 @@ namespace Content.Server.Forensics;
 public sealed partial class ResidueComponent : Component
 {
     [DataField]
-    public LocId ResidueAdjective = "residue-unknown";
+    public LocId ResidueAdjective = "generic-unknown-title";
 
     [DataField]
     public string? ResidueColor;

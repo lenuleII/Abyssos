@@ -439,7 +439,7 @@ public sealed class NewsSystem : SharedNewsSystem
                     Text = Loc.GetString("news-discord-footer",
                         ("server", _baseServer.ServerName),
                         ("round", _ticker.RoundId),
-                        ("author", article.Author ?? Loc.GetString("news-discord-unknown-author")),
+                        ("author", article.Author ?? Loc.GetString("generic-unknown-title")),
                         ("time", article.ShareTime.ToString(@"hh\:mm\:ss")))
                 }
             };

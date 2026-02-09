@@ -921,7 +921,7 @@ public sealed class AccessReaderSystem : EntitySystem
             name = getIdentityShortInfoEvent.Title;
         }
 
-        LogAccess(ent, name ?? Loc.GetString("access-reader-unknown-id"));
+        LogAccess(ent, name ?? Loc.GetString("generic-unknown-title"));
     }
 
     /// <summary>
@@ -959,7 +959,7 @@ public sealed class AccessReaderSystem : EntitySystem
             // Combine the names of all access levels in the subset into a single string
             foreach (var access in accessSubset)
             {
-                var accessName = Loc.GetString("access-reader-unknown-id");
+                var accessName = Loc.GetString("generic-unknown-title");
 
                 if (_prototype.Resolve(access, out var accessProto) && !string.IsNullOrWhiteSpace(accessProto.Name))
                     accessName = Loc.GetString(accessProto.Name);

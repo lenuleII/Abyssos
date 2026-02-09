@@ -86,7 +86,7 @@ public sealed partial class ShuttleConsoleSystem
             var name = meta.EntityName;
 
             if (string.IsNullOrEmpty(name))
-                name = Loc.GetString("shuttle-console-unknown");
+                name = Loc.GetString("generic-unknown-title");
 
             // Can't travel to same map (yet)
             var destXform = _xformQuery.GetComponent(destUid);

@@ -217,7 +217,7 @@ namespace Content.Client.Cargo.UI
                 var product = _protoManager.Index<EntityPrototype>(order.ProductId);
                 var productName = product.Name;
                 var requester = !string.IsNullOrEmpty(order.Requester) ?
-                    order.Requester : Loc.GetString("cargo-console-menu-order-row-alerts-requester-unknown");
+                    order.Requester : Loc.GetString("generic-unknown-title");
                 var account = _protoManager.Index(order.Account);
 
                 var row = new CargoOrderRow

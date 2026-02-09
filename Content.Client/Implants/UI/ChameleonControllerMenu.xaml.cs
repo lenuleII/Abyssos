@@ -29,7 +29,7 @@ public sealed partial class ChameleonControllerMenu : FancyWindow
     public DateTime? _lockedUntil;
 
     private static readonly ProtoId<JobIconPrototype> UnknownIcon = "JobIconUnknown";
-    private static readonly LocId UnknownDepartment = "department-Unknown";
+    private static readonly LocId UnknownDepartment = "generic-unknown-title";
 
     public event Action<ProtoId<ChameleonOutfitPrototype>>? OnJobSelected;
 

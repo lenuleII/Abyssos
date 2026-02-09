@@ -18,7 +18,6 @@ shuttle-console-linear-velocity-value = {$X}, {$Y}
 shuttle-console-angular-velocity = Angular velocity:
 shuttle-console-angular-velocity-value = {$angularVelocity}
 
-shuttle-console-unknown = Unknown
 shuttle-console-iff-label = {$name} ({$distance}m)
 shuttle-console-exclusion = Exclusion area
 

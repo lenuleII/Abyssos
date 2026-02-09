@@ -575,7 +575,7 @@ namespace Content.Server.GameTicking
                     PlayerNetEntity = GetNetEntity(entity),
                     Role = antag
                         ? roles.First(role => role.Antagonist).Name
-                        : roles.FirstOrDefault().Name ?? Loc.GetString("game-ticker-unknown-role"),
+                        : roles.FirstOrDefault().Name ?? Loc.GetString("generic-unknown-title"),
                     Antag = antag,
                     JobPrototypes = roles.Where(role => !role.Antagonist).Select(role => role.Prototype).ToArray(),
                     AntagPrototypes = roles.Where(role => role.Antagonist).Select(role => role.Prototype).ToArray(),
@@ -812,7 +812,7 @@ namespace Content.Server.GameTicking
                 if (_webhookIdentifier == null)
                     return;
 
-                var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? Loc.GetString("discord-round-notifications-unknown-map");
+                var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? Loc.GetString("generic-unknown-title");
                 var content = Loc.GetString("discord-round-notifications-started", ("id", RoundId), ("map", mapName));
 
                 var payload = new WebhookPayload { Content = content };

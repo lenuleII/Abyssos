@@ -26,13 +26,13 @@ namespace Content.Client.PDA
         public const int ProgramContentView = 3;
 
 
-        private string _pdaOwner = Loc.GetString("comp-pda-ui-unknown");
-        private string _owner = Loc.GetString("comp-pda-ui-unknown");
+        private string _pdaOwner = Loc.GetString("generic-unknown-title");
+        private string _owner = Loc.GetString("generic-unknown-title");
         private string _jobTitle = Loc.GetString("comp-pda-ui-unassigned");
-        private string _stationName = Loc.GetString("comp-pda-ui-unknown");
-        private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
-        private string _instructions = Loc.GetString("comp-pda-ui-unknown");
-        
+        private string _stationName = Loc.GetString("generic-unknown-title");
+        private string _alertLevel = Loc.GetString("generic-unknown-title");
+        private string _instructions = Loc.GetString("generic-unknown-title");
+
 
         private int _currentView;
 
@@ -125,7 +125,7 @@ namespace Content.Client.PDA
                 _clipboard.SetText(_instructions);
             };
 
-            
+
 
 
             HideAllViews();
@@ -151,7 +151,7 @@ namespace Content.Client.PDA
 
             if (state.PdaOwnerInfo.IdOwner != null || state.PdaOwnerInfo.JobTitle != null)
             {
-                _owner = state.PdaOwnerInfo.IdOwner ?? Loc.GetString("comp-pda-ui-unknown");
+                _owner = state.PdaOwnerInfo.IdOwner ?? Loc.GetString("generic-unknown-title");
                 _jobTitle = state.PdaOwnerInfo.JobTitle ?? Loc.GetString("comp-pda-ui-unassigned");
                 IdInfoLabel.SetMarkup(Loc.GetString("comp-pda-ui",
                     ("owner", _owner),
@@ -162,10 +162,10 @@ namespace Content.Client.PDA
                 IdInfoLabel.SetMarkup(Loc.GetString("comp-pda-ui-blank"));
             }
 
-            _stationName = state.StationName ?? Loc.GetString("comp-pda-ui-unknown");
+            _stationName = state.StationName ?? Loc.GetString("generic-unknown-title");
             StationNameLabel.SetMarkup(Loc.GetString("comp-pda-ui-station",
                 ("station", _stationName)));
-            
+
 
             var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
 
@@ -174,7 +174,7 @@ namespace Content.Client.PDA
 
             var alertLevel = state.PdaOwnerInfo.StationAlertLevel;
             var alertColor = state.PdaOwnerInfo.StationAlertColor;
-            var alertLevelKey = alertLevel != null ? $"alert-level-{alertLevel}" : "alert-level-unknown";
+            var alertLevelKey = alertLevel != null ? $"alert-level-{alertLevel}" : "generic-unknown-title";
             _alertLevel = Loc.GetString(alertLevelKey);
 
             StationAlertLevelLabel.SetMarkup(Loc.GetString(

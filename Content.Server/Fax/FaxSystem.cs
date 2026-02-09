@@ -541,7 +541,7 @@ public sealed class FaxSystem : EntitySystem
             content += Loc.GetString(component.SenderInfo,
                 ("sender_name", component.FaxName),
                 ("sender_addr", faxMachineAddress),
-                ("recipient_name", component.DestinationFaxName ?? Loc.GetString("fax-machine-popup-source-unknown")),
+                ("recipient_name", component.DestinationFaxName ?? Loc.GetString("generic-unknown-title")),
                 ("recipient_addr", component.DestinationFaxAddress),
                 ("time", timeString)
             );
@@ -554,7 +554,7 @@ public sealed class FaxSystem : EntitySystem
             { FaxConstants.FaxPaperLabelData, labelComponent?.CurrentLabel },
             { FaxConstants.FaxPaperContentData, content },
             { FaxConstants.FaxPaperLockedData, paper.EditingDisabled },
-            { FaxConstants.FaxPaperSenderFaxNameData, component.FaxName ?? Loc.GetString("fax-machine-popup-source-unknown") }
+            { FaxConstants.FaxPaperSenderFaxNameData, component.FaxName ?? Loc.GetString("generic-unknown-title") }
         };
 
         if (metadata.EntityPrototype != null)
@@ -597,7 +597,7 @@ public sealed class FaxSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        var faxName = printout.SenderFaxName ?? Loc.GetString("fax-machine-popup-source-unknown");
+        var faxName = printout.SenderFaxName ?? Loc.GetString("generic-unknown-title");
 
         _popupSystem.PopupEntity(Loc.GetString("fax-machine-popup-received", ("from", faxName)), uid);
         _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Printing);

@@ -83,12 +83,12 @@ public sealed partial class WarDeclaratorWindow : FancyWindow
                 break;
             case WarConditionStatus.NoWarUnknown:
                 StatusLabel.Text = Loc.GetString("war-declarator-boost-impossible");
-                InfoLabel.Text = Loc.GetString("war-declarator-conditions-unknown");
+                InfoLabel.Text = Loc.GetString("generic-unknown-title");
                 StatusLabel.SetOnlyStyleClass(StyleClass.Negative);
                 break;
             default:
                 StatusLabel.Text = Loc.GetString("war-declarator-boost-impossible");
-                InfoLabel.Text = Loc.GetString("war-declarator-conditions-unknown");
+                InfoLabel.Text = Loc.GetString("generic-unknown-title");
                 StatusLabel.SetOnlyStyleClass(StyleClass.Negative);
                 break;
         }

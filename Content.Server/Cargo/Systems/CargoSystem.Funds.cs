@@ -61,7 +61,7 @@ public sealed partial class CargoSystem
             if (!_emag.CheckFlag(ent, EmagType.Interaction))
             {
                 var msg = Loc.GetString("cargo-console-fund-withdraw-broadcast",
-                    ("name", tryGetIdentityShortInfoEvent.Title ?? Loc.GetString("cargo-console-fund-transfer-user-unknown")),
+                    ("name", tryGetIdentityShortInfoEvent.Title ?? Loc.GetString("generic-unknown-title")),
                     ("amount", args.Amount),
                     ("name1", Loc.GetString(ourAccount.Name)),
                     ("code1", Loc.GetString(ourAccount.Code)));
@@ -76,7 +76,7 @@ public sealed partial class CargoSystem
             if (!_emag.CheckFlag(ent, EmagType.Interaction))
             {
                 var msg = Loc.GetString("cargo-console-fund-transfer-broadcast",
-                    ("name", tryGetIdentityShortInfoEvent.Title ?? Loc.GetString("cargo-console-fund-transfer-user-unknown")),
+                    ("name", tryGetIdentityShortInfoEvent.Title ?? Loc.GetString("generic-unknown-title")),
                     ("amount", args.Amount),
                     ("name1", Loc.GetString(ourAccount.Name)),
                     ("code1", Loc.GetString(ourAccount.Code)),

@@ -57,7 +57,6 @@ job-name-boxer = Boxer
 job-name-no-id = No ID
 job-name-prisoner = Prisoner
 job-name-roboticist = Roboticist
-job-name-unknown = Unknown
 job-name-virologist = Virologist
 job-name-zookeeper = Zookeeper
 

@@ -157,7 +157,7 @@ public sealed partial class DockingScreen : BoxContainer
                     iffLabel = _shuttles.GetIFFLabel(dockGrid.Value);
                 }
 
-                iffLabel ??= Loc.GetString("shuttle-console-unknown");
+                iffLabel ??= Loc.GetString("generic-unknown-title");
                 dockContainer.SetName(iffLabel);
                 // DockedWith.AddChild(dockContainer);
             }

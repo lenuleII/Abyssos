@@ -554,7 +554,7 @@ public abstract class SharedRoleSystem : EntitySystem
         foreach (var role in mind.Comp.MindRoleContainer.ContainedEntities)
         {
             var valid = false;
-            var name = "game-ticker-unknown-role";
+            var name = "generic-unknown-title";
             var prototype = "";
             string? playTimeTracker = null;
 

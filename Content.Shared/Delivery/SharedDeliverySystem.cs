@@ -51,7 +51,7 @@ public abstract class SharedDeliverySystem : EntitySystem
 
     private void OnDeliveryExamine(Entity<DeliveryComponent> ent, ref ExaminedEvent args)
     {
-        var jobTitle = ent.Comp.RecipientJobTitle ?? Loc.GetString("delivery-recipient-no-job");
+        var jobTitle = ent.Comp.RecipientJobTitle ?? Loc.GetString("generic-unknown-title");
         var recipientName = ent.Comp.RecipientName ?? Loc.GetString("delivery-recipient-no-name");
 
         using (args.PushGroup(nameof(DeliveryComponent), 1))

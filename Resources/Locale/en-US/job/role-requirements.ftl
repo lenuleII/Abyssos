@@ -13,6 +13,6 @@ role-timer-blacklisted-traits = Your character must not have any of the followin
 
 role-timer-locked = Locked (hover for details)
 
-role-timer-department-unknown = Unknown Department
+role-timer-generic-unknown-title = Unknown Department
 
 role-ban = You have been banned from this role.

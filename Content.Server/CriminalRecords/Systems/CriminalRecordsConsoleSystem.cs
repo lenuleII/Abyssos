@@ -83,7 +83,7 @@ public sealed class CriminalRecordsConsoleSystem : SharedCriminalRecordsConsoleS
     {
         var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(null, uid);
         RaiseLocalEvent(tryGetIdentityShortInfoEvent);
-        officer = tryGetIdentityShortInfoEvent.Title ?? Loc.GetString("criminal-records-console-unknown-officer");
+        officer = tryGetIdentityShortInfoEvent.Title ?? Loc.GetString("generic-unknown");
     }
 
     private void OnChangeStatus(Entity<CriminalRecordsConsoleComponent> ent, ref CriminalRecordChangeStatus msg)
@@ -125,7 +125,7 @@ public sealed class CriminalRecordsConsoleSystem : SharedCriminalRecordsConsoleS
 
         // will probably never fail given the checks above
         name = _records.RecordName(key.Value);
-        officer = Loc.GetString("criminal-records-console-unknown-officer");
+        officer = Loc.GetString("generic-unknown");
         var jobName = "Unknown";
 
         _records.TryGetRecord<GeneralStationRecord>(key.Value, out var entry);

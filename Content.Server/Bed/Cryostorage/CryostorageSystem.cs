@@ -223,7 +223,7 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
         if (!TryComp<StationRecordsComponent>(station, out var stationRecords))
             return;
 
-        var jobName = Loc.GetString("earlyleave-cryo-job-unknown");
+        var jobName = Loc.GetString("generic-unknown-title");
         var recordId = _stationRecords.GetRecordByName(station.Value, name);
         if (recordId != null)
         {

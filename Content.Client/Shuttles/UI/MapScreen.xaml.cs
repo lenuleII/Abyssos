@@ -271,7 +271,7 @@ public sealed partial class MapScreen : BoxContainer
 
             if (string.IsNullOrEmpty(mapName))
             {
-                mapName = Loc.GetString("shuttle-console-unknown");
+                mapName = Loc.GetString("generic-unknown-title");
             }
 
             var heading = new CollapsibleHeading(mapName);

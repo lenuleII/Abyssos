@@ -198,7 +198,7 @@ public sealed partial class VoiceMaskSystem : EntitySystem
     #region Helper functions
     private string GetCurrentVoiceName(Entity<VoiceMaskComponent> entity)
     {
-        return entity.Comp.VoiceMaskName ?? Loc.GetString("voice-mask-default-name-override");
+        return entity.Comp.VoiceMaskName ?? Loc.GetString("generic-unknown-title");
     }
 
     private void TransformVoice(Entity<VoiceMaskComponent> entity, TransformSpeakerNameEvent args)

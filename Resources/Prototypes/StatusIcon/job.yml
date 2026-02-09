@@ -610,5 +610,5 @@
   icon:
     sprite: *icon-rsi
     state: Unknown
-  jobName: job-name-unknown
+  jobName: generic-unknown-title
   isCrewJob: false

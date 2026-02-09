@@ -61,7 +61,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             ? state.ScanMode.Value
                 ? Loc.GetString("health-analyzer-window-scan-mode-active")
                 : Loc.GetString("health-analyzer-window-scan-mode-inactive")
-            : Loc.GetString("health-analyzer-window-entity-unknown-text");
+            : Loc.GetString("generic-unknown-title");
 
         ScanModeLabel.FontColorOverride = state.ScanMode.HasValue && state.ScanMode.Value ? Color.Green : Color.Red;
 
@@ -75,7 +75,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         name.PushColor(Color.White);
         name.AddText(_entityManager.HasComponent<MetaDataComponent>(target.Value)
             ? Identity.Name(target.Value, _entityManager)
-            : Loc.GetString("health-analyzer-window-entity-unknown-text"));
+            : Loc.GetString("generic-unknown-title"));
         NameLabel.SetMessage(name);
 
         SpeciesLabel.Text =
@@ -97,7 +97,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         StatusLabel.Text =
             _entityManager.TryGetComponent<MobStateComponent>(target.Value, out var mobStateComponent)
                 ? GetStatus(mobStateComponent.CurrentState)
-                : Loc.GetString("health-analyzer-window-entity-unknown-text");
+                : Loc.GetString("generic-unknown-title");
 
         // Total Damage
 
@@ -147,7 +147,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             MobState.Alive => Loc.GetString("health-analyzer-window-entity-alive-text"),
             MobState.Critical => Loc.GetString("health-analyzer-window-entity-critical-text"),
             MobState.Dead => Loc.GetString("health-analyzer-window-entity-dead-text"),
-            _ => Loc.GetString("health-analyzer-window-entity-unknown-text"),
+            _ => Loc.GetString("generic-unknown-title"),
         };
     }
 

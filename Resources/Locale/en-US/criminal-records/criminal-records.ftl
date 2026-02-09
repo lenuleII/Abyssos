@@ -48,7 +48,6 @@ criminal-records-console-hostile = {$name} ({$job}) was marked as hostile by {$o
 criminal-records-console-not-hostile = {$name} ({$job}) no longer marked as hostile by {$officer}.
 criminal-records-console-eliminated = {$name} ({$job}) was marked as eliminated by {$officer}.
 criminal-records-console-not-eliminated = {$name} ({$job}) no longer marked as eliminated by {$officer}.
-criminal-records-console-unknown-officer = <unknown>
 
 ## Filters
 

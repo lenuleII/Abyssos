@@ -230,7 +230,7 @@ namespace Content.Server.Communications
         {
             var maxLength = _cfg.GetCVar(CCVars.ChatMaxAnnouncementLength);
             var msg = SharedChatSystem.SanitizeAnnouncement(message.Message, maxLength);
-            var author = Loc.GetString("comms-console-announcement-unknown-sender");
+            var author = Loc.GetString("generic-unknown-title");
             if (message.Actor is { Valid: true } mob)
             {
                 if (!CanAnnounce(comp))

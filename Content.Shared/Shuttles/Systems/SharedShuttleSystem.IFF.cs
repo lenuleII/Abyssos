@@ -40,7 +40,7 @@ public abstract partial class SharedShuttleSystem
             return null;
         }
 
-        return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName;
+        return string.IsNullOrEmpty(entName) ? Loc.GetString("generic-unknown-title") : entName;
     }
 
     /// <summary>

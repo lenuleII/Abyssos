@@ -352,7 +352,7 @@ public abstract class SharedSuitSensorSystem : EntitySystem
             return null;
 
         // try to get mobs id from ID slot
-        var userName = Loc.GetString("suit-sensor-component-unknown-name");
+        var userName = Loc.GetString("generic-unknown-title");
         var userJob = Loc.GetString("suit-sensor-component-unknown-job");
         var userJobIcon = "JobIconNoId";
         var userJobDepartments = new List<string>();

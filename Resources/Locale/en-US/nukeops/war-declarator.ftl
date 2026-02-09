@@ -6,7 +6,6 @@ war-declarator-conditions-small-crew = There are not enough nuclear operatives t
 war-declarator-conditions-left-outpost = Shuttle left the syndicate outpost
 war-declarator-conditions-time-out = War declaration time passed
 war-declarator-conditions-ready = Shuttle can leave the outpost!
-war-declarator-conditions-unknown = Unknown
 war-declarator-boost-possible = Able to declare war
 war-declarator-boost-impossible = Unable to declare war
 war-declarator-boost-declared = War declared! Shuttle may be disabled for...
