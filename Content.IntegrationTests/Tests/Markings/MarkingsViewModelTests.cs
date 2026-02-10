@@ -18,14 +18,12 @@ public sealed class MarkingTestAttribute : TestAttribute, IWrapTestMethod
 {
     private sealed class MarkingTestCommand(TestCommand inner) : DelegatingTestCommand(inner)
     {
-        private readonly TestCommand _inner = inner;
-
         public override TestResult Execute(TestExecutionContext context)
         {
-            var fixture = _inner.Test.Fixture as MarkingsViewModelTests;
+            var fixture = innerCommand.Test.Fixture as MarkingsViewModelTests;
             fixture!.Client.WaitAssertion(() =>
                 {
-                    context.CurrentResult = _inner.Execute(context);
+                    context.CurrentResult = innerCommand.Execute(context);
                 })
                 .Wait();
             return context.CurrentResult;
