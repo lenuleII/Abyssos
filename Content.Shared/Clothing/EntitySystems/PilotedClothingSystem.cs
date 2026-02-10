@@ -40,10 +40,6 @@ public sealed partial class PilotedClothingSystem : EntitySystem
         if (_whitelist.IsWhitelistFail(entity.Comp.PilotWhitelist, args.Entity))
             return;
 
-        // Make sure the entity is not crit or dead.
-        if (_mobState.IsIncapacitated(args.Entity))
-            return;
-
         entity.Comp.Pilot = args.Entity;
         Dirty(entity);
 
@@ -51,6 +47,10 @@ public sealed partial class PilotedClothingSystem : EntitySystem
         var activePilot = EnsureComp<ActiveClothingPilotComponent>(args.Entity);
         activePilot.Clothing = entity.Owner;
         Dirty(args.Entity, activePilot);
+
+        // Make sure the entity is not crit or dead before they start piloting.
+        if (_mobState.IsIncapacitated(args.Entity))
+            return;
 
         // Attempt to setup control link, if Pilot and Wearer are both present.
         StartPiloting(entity);
@@ -97,6 +97,7 @@ public sealed partial class PilotedClothingSystem : EntitySystem
 
     /// <summary>
     /// Stops the movement control when the pilot is crit or dead.
+    /// Resumes when the pilot is revived.
     /// </summary>
     private void OnPilotMobStateChanged(Entity<ActiveClothingPilotComponent> entity, ref MobStateChangedEvent args)
     {
