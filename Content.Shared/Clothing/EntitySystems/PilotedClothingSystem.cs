@@ -97,7 +97,7 @@ public sealed partial class PilotedClothingSystem : EntitySystem
 
         if (_mobState.IsIncapacitated(entity))
         {
-            StopPiloting((entity.Comp.Clothing, clothing));
+            StopPiloting((entity.Comp.Clothing.Value, clothing));
         }
     }
 
@@ -120,6 +120,7 @@ public sealed partial class PilotedClothingSystem : EntitySystem
         // Setup back reference.
         var activePilot = EnsureComp<ActiveClothingPilotComponent>(pilotEnt);
         activePilot.Clothing = entity.Owner;
+        Dirty(pilotEnt, activePilot);
 
         // Add component to block prediction of wearer
         EnsureComp<PilotedByClothingComponent>(wearerEnt);
