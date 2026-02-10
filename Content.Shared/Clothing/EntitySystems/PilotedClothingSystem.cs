@@ -47,6 +47,11 @@ public sealed partial class PilotedClothingSystem : EntitySystem
         entity.Comp.Pilot = args.Entity;
         Dirty(entity);
 
+        // Setup back reference.
+        var activePilot = EnsureComp<ActiveClothingPilotComponent>(args.Entity);
+        activePilot.Clothing = entity.Owner;
+        Dirty(args.Entity, activePilot);
+
         // Attempt to setup control link, if Pilot and Wearer are both present.
         StartPiloting(entity);
     }
@@ -60,6 +65,9 @@ public sealed partial class PilotedClothingSystem : EntitySystem
         StopPiloting(entity);
         entity.Comp.Pilot = null;
         Dirty(entity);
+
+        // Remove back reference.
+        RemCompDeferred<ActiveClothingPilotComponent>(args.Entity);
     }
 
     private void OnEquipped(Entity<PilotedClothingComponent> entity, ref GotEquippedEvent args)
@@ -98,6 +106,9 @@ public sealed partial class PilotedClothingSystem : EntitySystem
         if (_mobState.IsIncapacitated(entity))
         {
             StopPiloting((entity.Comp.Clothing.Value, clothing));
+        } else if (_mobState.IsAlive(entity))
+        {
+            StartPiloting((entity.Comp.Clothing.Value, clothing));
         }
     }
 
@@ -116,11 +127,6 @@ public sealed partial class PilotedClothingSystem : EntitySystem
 
         var pilotEnt = entity.Comp.Pilot.Value;
         var wearerEnt = entity.Comp.Wearer.Value;
-
-        // Setup back reference.
-        var activePilot = EnsureComp<ActiveClothingPilotComponent>(pilotEnt);
-        activePilot.Clothing = entity.Owner;
-        Dirty(pilotEnt, activePilot);
 
         // Add component to block prediction of wearer
         EnsureComp<PilotedByClothingComponent>(wearerEnt);
@@ -152,7 +158,6 @@ public sealed partial class PilotedClothingSystem : EntitySystem
         // Clean up components on the Pilot
         var pilotEnt = entity.Comp.Pilot.Value;
         RemComp<RelayInputMoverComponent>(pilotEnt);
-        RemCompDeferred<ActiveClothingPilotComponent>(pilotEnt);
 
         // Clean up components on the Wearer
         var wearerEnt = entity.Comp.Wearer.Value;
