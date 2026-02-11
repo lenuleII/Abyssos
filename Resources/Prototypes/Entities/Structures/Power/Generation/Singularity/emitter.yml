@@ -107,3 +107,6 @@
       - On
       - Off
       - Toggle
+  - type: Electrified
+    usesApcPower: false
+    mediumVoltageNode: input
