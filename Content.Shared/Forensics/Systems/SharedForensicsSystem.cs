@@ -14,6 +14,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Content.Shared.Gibbing;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
@@ -224,7 +225,7 @@ public sealed class SharedForensicsSystem : EntitySystem
     {
         if (!TryComp<ForensicsComponent>(target, out var forensicsComp))
         {
-            _popupSystem.PopupClient(Loc.GetString("forensics-cleaning-cannot-clean", ("target", target)), user, user, PopupType.MediumCaution);
+            _popupSystem.PopupClient(Loc.GetString("forensics-cleaning-cannot-clean", ("target", Identity.Entity(target, EntityManager))), user, user, PopupType.MediumCaution);
             return false;
         }
 
@@ -245,14 +246,14 @@ public sealed class SharedForensicsSystem : EntitySystem
 
             _doAfterSystem.TryStartDoAfter(doAfterArgs);
 
-            var userPopupText = Loc.GetString("forensics-cleaning-user", ("target", target));
-            var othersPopupText = Loc.GetString("forensics-cleaning-others", ("user", user), ("target", target));
+            var userPopupText = Loc.GetString("forensics-cleaning-user", ("target", Identity.Entity(target, EntityManager)));
+            var othersPopupText = Loc.GetString("forensics-cleaning-others", ("user", Identity.Entity(user, EntityManager)), ("target", Identity.Entity(target, EntityManager)));
             _popupSystem.PopupPredicted(userPopupText, othersPopupText, user, user);
 
             return true;
         }
 
-        _popupSystem.PopupClient(Loc.GetString("forensics-cleaning-cannot-clean", ("target", target)), user, user, PopupType.MediumCaution);
+        _popupSystem.PopupClient(Loc.GetString("forensics-cleaning-cannot-clean", ("target", Identity.Entity(target, EntityManager))), user, user, PopupType.MediumCaution);
         return false;
     }
 
