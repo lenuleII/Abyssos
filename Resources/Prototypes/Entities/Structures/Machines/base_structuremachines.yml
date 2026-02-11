@@ -86,5 +86,6 @@
   components:
   - type: Electrified
     onHandInteract: false
+    onInteractUsing: false
     onBump: false
     usesApcPower: true
