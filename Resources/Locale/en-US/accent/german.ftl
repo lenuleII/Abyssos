@@ -34,18 +34,18 @@ accent-german-words-11 = wonderful
 accent-german-words-replace-11 = wunderbar
 
 accent-german-words-12 = and
-accent-german-words-replace-44 = und
+accent-german-words-replace-12 = und
 
-accent-german-words-12 = hi
-accent-german-words-replace-48 = hallo
+accent-german-words-13 = hi
+accent-german-words-replace-13 = hallo
 
-accent-german-words-13 = hello
-accent-german-words-replace-13 = guten tag
+accent-german-words-14 = hello
+accent-german-words-replace-14 = guten tag
 
-accent-german-words-14 = fantastic
-accent-german-words-replace-14 = fantastisch
+accent-german-words-15 = fantastic
+accent-german-words-replace-15 = fantastisch
 
-accent-german-words-15 = forbidden
-accent-german-words-15-2 = prohibited
-accent-german-words-15-3 = banned
-accent-german-words-replace-15 = verboten
+accent-german-words-16 = forbidden
+accent-german-words-16-2 = prohibited
+accent-german-words-16-3 = banned
+accent-german-words-replace-16 = verboten
