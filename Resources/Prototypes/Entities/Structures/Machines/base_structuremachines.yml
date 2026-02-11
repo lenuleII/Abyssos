@@ -85,5 +85,6 @@
   id: CriticalMachine
   components:
   - type: Electrified
+    onHandInteract: false
     onBump: false
     usesApcPower: true
