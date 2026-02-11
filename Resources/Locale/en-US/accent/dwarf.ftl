@@ -13,7 +13,7 @@ accent-dwarf-words-3 = dont
 accent-dwarf-words-replace-3 = dinnae
 
 accent-dwarf-words-4 = i'm
-accent-dwarf-words-replace-4 = A'm
+accent-dwarf-words-replace-4 = a'm
 
 accent-dwarf-words-5 = im
 accent-dwarf-words-replace-5 = am
@@ -22,7 +22,7 @@ accent-dwarf-words-6 = know
 accent-dwarf-words-replace-6 = ken
 
 accent-dwarf-words-7 = i
-accent-dwarf-words-replace-7 = Ah
+accent-dwarf-words-replace-7 = ah
 
 accent-dwarf-words-8 = you're
 accent-dwarf-words-replace-8 = ye're
@@ -34,10 +34,10 @@ accent-dwarf-words-10 = you
 accent-dwarf-words-replace-10 = ye
 
 accent-dwarf-words-11 = i'll
-accent-dwarf-words-replace-11 = A'll
+accent-dwarf-words-replace-11 = a'll
 
-accent-dwarf-words-12 = ill
-accent-dwarf-words-replace-12 = all
+accent-dwarf-words-12 = a
+accent-dwarf-words-replace-12 = ae
 
 accent-dwarf-words-13 = of
 accent-dwarf-words-replace-13 = ae
@@ -278,6 +278,3 @@ accent-dwarf-words-replace-91 = benae
 
 accent-dwarf-words-92 = aint
 accent-dwarf-words-replace-92 = benae
-
-accent-dwarf-words-93 = a
-accent-dwarf-words-replace-93 = ae
