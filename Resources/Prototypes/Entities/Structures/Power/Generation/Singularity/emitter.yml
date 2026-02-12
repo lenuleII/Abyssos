@@ -1,7 +1,7 @@
 - type: entity
   id: Emitter
   name: emitter
-  parent: SmallConstructibleMachine
+  parent: [ SmallConstructibleMachine , CriticalMachine ]
   description: A heavy duty industrial laser. Shoots non-stop when turned on.
   placement:
     mode: SnapgridCenter
@@ -107,3 +107,6 @@
       - On
       - Off
       - Toggle
+  - type: Electrified
+    usesApcPower: false
+    mediumVoltageNode: input
